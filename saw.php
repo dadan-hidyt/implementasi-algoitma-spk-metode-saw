@@ -85,4 +85,14 @@ class SAW
     }
     return $data;
   }
+  public function  hitungSaw(){
+    $final = [];
+    foreach($this->getNormalisasi() as $key => $val) {
+      $final[$key] = 0;
+      foreach($val as $k1=>$v1) {
+        $final[$key] += ($this->KriteriaTernormalisasi[$k1] * $v1);
+      }
+    }
+    return $final;
+  }
 }
